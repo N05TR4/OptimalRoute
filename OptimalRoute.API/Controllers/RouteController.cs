@@ -5,7 +5,7 @@ using OptimalRoute.API.Models;
 
 namespace OptimalRoute.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/optimal-route")]
     [ApiController]
     public class RouteController : ControllerBase
     {

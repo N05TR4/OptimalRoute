@@ -34,7 +34,15 @@ namespace OptimalRoute.API.Services
                 unvisted.Remove(currentCity);
 
                 if(currentCity == request.Destination) break;
-                if (shortesPaths[currentCity] == int.MaxValue) break;
+          
+                if (shortesPaths[currentCity] == int.MaxValue)
+                {
+                    return new RouteResponse
+                    {
+                        Route = new List<string>(),
+                        TotalTime = int.MaxValue
+                    };
+                }
 
                 foreach(var (neighbor, travelTime) in graph[currentCity])
                 {
@@ -48,6 +56,17 @@ namespace OptimalRoute.API.Services
                 }
             }
 
+            // Si el destino nunca fue alcanzado, no hay ruta válida
+            if (!previousNodes.ContainsKey(request.Destination))
+            {
+                return new RouteResponse
+                {
+                    Route = new List<string>(),
+                    TotalTime = int.MaxValue
+                };
+            }
+
+            // Construcción de la ruta óptima
             var route = new List<string>();
             var current = request.Destination;
 
