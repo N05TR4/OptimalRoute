@@ -1,0 +1,59 @@
+# Visual Studio and JetBrains Rider
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build and Release Folders
+bin/
+obj/
+out/
+TestResults/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dll
+*.exe
+*.pdb
+*.db
+*.log
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+NUGET_BACKUP/
+
+# Logs and User-Specific Files
+*.log
+*.tlog
+*.tmp
+*.cache
+*.ide
+*.swp
+*.bak
+*.sqlite
+*.sqlite3
+
+# Environment Variables
+.env
+.env.local
+secrets.json
+
+# Swagger Generated Files
+swagger/
+*.swagger.json
+*.swagger.yaml
+
+# Rider and Resharper
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# MacOS & Linux
+.DS_Store
+._*
+Thumbs.db
